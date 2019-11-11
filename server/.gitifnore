@@ -1,0 +1,7 @@
+/api-server/vendor
+/api-server/.bundle
+/api-server/.env
+/app/node_modules
+/app/.env
+.env
+*/.DS_Store

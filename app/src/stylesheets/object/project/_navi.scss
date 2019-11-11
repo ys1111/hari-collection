@@ -1,0 +1,31 @@
+.p-navi {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 450px;
+  padding: 8px;
+  margin: 0;
+  list-style-type: none;
+  background-color: $color-white;
+  border-bottom: 2px solid $color-divider;
+
+  &__item {
+    margin: 0 8px;
+
+    a {
+      font-size: $text-size-bold;
+      font-weight: 600;
+      color: $color-text-grey;
+      text-decoration: none;
+    }
+
+    a:active {
+      color: $color-primary;
+    }
+
+    &-active {
+      color: $color-primary;
+    }
+  }
+}

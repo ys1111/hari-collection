@@ -1,0 +1,36 @@
+.l-body {
+  width: 450px;
+  margin: 16px auto 0;
+}
+
+@media screen and ( min-width : $break-width-very-small ) {
+
+  .l-body {
+    width: 360px;
+    margin: 8px auto 0;
+  }
+}
+
+@media screen and ( min-width : $break-width-small ) {
+
+  .l-body {
+    width: 450px;
+    margin: 16px auto 0;
+  }
+}
+
+@media screen and ( min-width : $break-width-middle ) {
+
+  .l-body {
+    width: 760px;
+    margin: 24px auto 0;
+  }
+}
+
+@media screen and ( min-width : $break-width-big ) {
+
+  .l-body {
+    width: 1020px;
+    margin: 40px auto 0;
+  }
+}
