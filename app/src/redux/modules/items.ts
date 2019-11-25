@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux'
 import fetcher from '../../helpers/fetcher'
-import { MercunItem } from '../../helpers/MercunItem'
+import { MercunItem, itemProperty } from '../../helpers/MercunItem'
 import { MercunItems } from '../../helpers/MercunItems'
 
 // CONSTANTS
@@ -56,7 +56,7 @@ export interface State {
   status: ITEM_STATUS
   error: Error | null
   items: any[] // @TODO type
-  item: MercunItem
+  item?: itemProperty
   category_id: number
   item_id: number
 }
@@ -65,9 +65,20 @@ const initialState: State = {
   status: ITEM_STATUS.INITIAL,
   error: null,
   items: [],
+  item: { 
+    id: '', 
+    name: '', 
+    description: '', 
+    like_count: 0, 
+    cot_count: 0, 
+    price: 0, 
+    is_sold_out: false, 
+    shipping_fee: '', 
+    image: '', 
+    category_id: 0
+    },
   category_id: 0,
-  item_id: 0,
-  item: []
+  item_id: 0
 }
 
 interface ItemAction {
@@ -147,7 +158,7 @@ export const loadFilterItem:any = (category_id: number) => {
   }
 }
 
-export const loadIndivisualItem:any = (id: number) => {
+export const loadIndivisualItem: any = (id: number) => {
   return async (dispatch: Dispatch) => {
     dispatch(loadIndivisualItemStart(id))
  

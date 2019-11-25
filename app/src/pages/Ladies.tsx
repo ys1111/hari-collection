@@ -20,7 +20,9 @@ interface DispatchProps {
   loadIndivisualItem: (id: number) => void
 }
 
-class Ladies extends React.Component<StateProps, DispatchProps> {
+type Props = StateProps & DispatchProps
+
+class Ladies extends React.Component<Props> {
   componentDidMount() {
     const { loadFilterItem } = this.props
     loadFilterItem(ladiesCategoryId)

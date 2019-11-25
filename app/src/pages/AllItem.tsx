@@ -16,10 +16,12 @@ interface StateProps {
 
 interface DispatchProps {
   loadItem: () => void
-  loadIndivisualItem: () => void
+  loadIndivisualItem: (id: number) => void
 }
 
-class AllItem extends React.Component<StateProps, DispatchProps> {
+type Props = StateProps & DispatchProps
+
+class AllItem extends React.Component<Props> {
   componentDidMount() {
     const { items, loadItem } = this.props
     console.log('app', this.props)
@@ -28,7 +30,7 @@ class AllItem extends React.Component<StateProps, DispatchProps> {
     }
   }
 
-  addItem = (id) => {
+  addItem = (id: number) => {
     const { loadIndivisualItem } = this.props
     loadIndivisualItem(id)
   }

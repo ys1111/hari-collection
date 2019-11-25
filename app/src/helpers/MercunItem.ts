@@ -1,7 +1,4 @@
-// export type MercunItem = any;
-
-// @TODO Json type declaration
-export type MercunItem = Array<{
+export type itemProperty = {
   id: string
   name: string
   description: string
@@ -12,4 +9,6 @@ export type MercunItem = Array<{
   shipping_fee: string
   image: string
   category_id: number
-}>
+}
+
+export type MercunItem = Array<itemProperty>
