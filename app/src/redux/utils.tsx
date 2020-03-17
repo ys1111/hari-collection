@@ -3,5 +3,5 @@ export const delay = (waitSeconds, func) => {
     setTimeout(() => {
       resolve(func())
     }, waitSeconds * 1000)
-  })  
+  })
 }

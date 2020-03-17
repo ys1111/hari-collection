@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 import AllItem from '../pages/AllItem'
 import Ladies from '../pages/Ladies'
 import Mens from '../pages/Mens'
@@ -6,16 +6,10 @@ import Kids from '../pages/Kids'
 import Entame from '../pages/Entame'
 import ShowItem from '../pages/ShowItem'
 import Navigation from '../components/Navigation'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends React.Component {
-
   render() {
-
     return (
       <Router>
         <div>
@@ -40,16 +34,15 @@ class App extends React.Component {
               <Route path="/entame">
                 <Entame />
               </Route>
-              <Route path="/items/:id" >
+              <Route path="/items/:id">
                 <ShowItem />
               </Route>
             </Switch>
           </div>
         </div>
-      </Router>   
+      </Router>
     )
   }
 }
 
 export default App
-

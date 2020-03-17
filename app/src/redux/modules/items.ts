@@ -65,18 +65,18 @@ const initialState: State = {
   status: ITEM_STATUS.INITIAL,
   error: null,
   items: [],
-  item: { 
-    id: '', 
-    name: '', 
-    description: '', 
-    like_count: 0, 
-    cot_count: 0, 
-    price: 0, 
-    is_sold_out: false, 
-    shipping_fee: '', 
-    image: '', 
+  item: {
+    id: '',
+    name: '',
+    description: '',
+    like_count: 0,
+    cot_count: 0,
+    price: 0,
+    is_sold_out: false,
+    shipping_fee: '',
+    image: '',
     category_id: 0
-    },
+  },
   category_id: 0,
   item_id: 0
 }
@@ -109,7 +109,7 @@ const reducer = (state: State = initialState, action: ItemAction): State => {
       return {
         ...state,
         status: ITEM_STATUS.LOADING,
-        item: action.payload 
+        item: action.payload
       }
     case ITEM_ACTION_TYPES.LOAD_ITEM_SUCCESS:
       return {
@@ -131,27 +131,27 @@ const reducer = (state: State = initialState, action: ItemAction): State => {
 export default reducer
 
 // Thunks
-export const loadItem:any = () => {
+export const loadItem: any = () => {
   return async (dispatch: Dispatch) => {
     dispatch(loadItemStart())
- 
-    await fetcher<MercunItems>('http://localhost:5000/items',{})
+
+    await fetcher<MercunItems>('http://localhost:5000/items', {})
       .then(items => {
-        const { data } = items;
+        const { data } = items
         return dispatch(loadItemSuccess(data))
       })
       .catch(err => console.log(err))
   }
 }
 
-export const loadFilterItem:any = (category_id: number) => {
+export const loadFilterItem: any = (category_id: number) => {
   return async (dispatch: Dispatch) => {
     dispatch(loadFilteredItemStart(category_id))
- 
-    await fetcher<MercunItems>('http://localhost:5000/items',{})
+
+    await fetcher<MercunItems>('http://localhost:5000/items', {})
       .then(items => {
-        const { data } = items;
-        const filterData = data.filter(data => data.category_id == category_id )
+        const { data } = items
+        const filterData = data.filter(data => data.category_id == category_id)
         return dispatch(loadItemSuccess(filterData))
       })
       .catch(err => console.log(err))
@@ -161,8 +161,8 @@ export const loadFilterItem:any = (category_id: number) => {
 export const loadIndivisualItem: any = (id: number) => {
   return async (dispatch: Dispatch) => {
     dispatch(loadIndivisualItemStart(id))
- 
-    await fetcher<MercunItem>('http://localhost:5000/items' + `/${id}`,{})
+
+    await fetcher<MercunItem>('http://localhost:5000/items' + `/${id}`, {})
       .then(items => {
         console.log(items)
         return dispatch(loadIndivisualItemSuccess(items))
@@ -170,4 +170,3 @@ export const loadIndivisualItem: any = (id: number) => {
       .catch(err => console.log(err))
   }
 }
-

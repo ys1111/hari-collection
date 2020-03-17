@@ -1,11 +1,6 @@
 {
-  "extends": [
-    "tslint:latest",
-    "tslint-config-prettier"
-  ],
-  "rulesDirectory": [
-    "tslint-plugin-prettier"
-  ],
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
     "no-unused-variable": false,
     "object-literal-sort-keys": false,

@@ -1,4 +1,4 @@
-export type MercunCategories = any;
+export type MercunCategories = any
 
 // @TODO Json type declaration
 // export type MercunCategories = Array<{

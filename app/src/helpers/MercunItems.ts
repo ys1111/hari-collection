@@ -2,7 +2,6 @@ import { MercunItem } from './MercunItem'
 
 // export type MercunItems = any[];
 
-
 // export interface JSONData {
 //   [name: string] : JSONData|number|string|boolean| JSONData[]
 // }
